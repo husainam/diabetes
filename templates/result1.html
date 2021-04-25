@@ -13,6 +13,38 @@
   <link href="./static/css2/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
   <link rel="stylesheet" href="../css/materialize.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <style>
+    .styled-table {
+    
+    margin: 25px 0;
+    font-size: 0.9em;
+    font-family: sans-serif;
+    min-width: 100px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+.styled-table thead tr {
+    background-color: #009879;
+    color: #ffffff;
+    text-align: left;
+}
+
+.styled-table th,
+.styled-table td {
+    padding: 12px 15px;
+}
+
+.styled-table tbody tr {
+    border-bottom: 1px solid #dddddd;
+}
+
+
+
+.styled-table tbody tr:last-of-type {
+    border-bottom: 2px solid #009879;
+}
+
+
+  </style>
 </head>
 
 <body>
@@ -30,9 +62,31 @@
 
 
 
-      <div class="row" style="margin:5% 0% 2.5% 25%">
+      <!-- <div class="row" >
             <h3 >{{pred}}</h3>
+      </div> -->
+      <div class="row"style="margin:5% 10% 5% 10%" >
+      <div class="cols s6">
+        <table class="styled-table">
+          <thead>
+              <tr>
+                  <th class="row center">Probability</th>
+                  <th class="row center">Percentage</th>
+              </tr>
+          </thead>
+          <tbody>
+              <tr>
+                  <td class="row center">{{prob}}</td>
+                  <td class="row center">{{percent}}</td>
+              </tr>
+              
+          </tbody>
+      </table>
       </div>
+      <div class="row center">
+        <a href='https://forms.gle/eiDj5sGvAurChtt17'><button type="submit" class="btn-large waves-effect waves-light ">Generate Report</button></a>
+      </div>
+     </div>
       <div class="row">
 
         <div class="col s3">
