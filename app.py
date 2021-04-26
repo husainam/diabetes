@@ -43,7 +43,7 @@ def results():
     if output > 50.0:
         return render_template('result3.html', prob='Yes', percent=f'{str(output)} %')
     else:
-        return render_template('result2.html', prob='No', percent=f'{str(output)} %')
+        return render_template('result4.html', prob='No', percent=f'{str(output)} %')
 
 
 @app.route('/predict', methods=['POST', 'GET'])
