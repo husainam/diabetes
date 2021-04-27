@@ -6,6 +6,7 @@ app = Flask(__name__)
 
 model = pickle.load(open("Diabetes1.pkl", "rb"))
 model1 = pickle.load(open("model2.pkl", "rb"))
+sc = pickle.load(open("scalar1.pkl", "rb"))
 
 
 @app.route('/')
@@ -34,8 +35,13 @@ def results():
 
     row_df = pd.DataFrame(
         [pd.Series([text1, text2, text3, text4, text5, text6])])
+    
+    new_data_scaled = sc.transform(row_df)
+    
 
-    prediction = model1.predict_proba(row_df)
+    prediction = model1.predict_proba(new_data_scaled)
+
+    
 
     output = '{0:.{1}f}'.format(prediction[0][1], 2)
 
