@@ -4,7 +4,7 @@ import pandas as pd
 
 app = Flask(__name__)
 
-model = pickle.load(open("Diabetes1.pkl", "rb"))
+model = pickle.load(open("Diabetes3.pkl", "rb"))
 model1 = pickle.load(open("model2.pkl", "rb"))
 sc = pickle.load(open("scalar1.pkl", "rb"))
 
@@ -59,9 +59,10 @@ def predict():
     text3 = request.form['3']
     text4 = request.form['4']
     text5 = request.form['5']
+    text6 = request.form['6']
 
     row_df = pd.DataFrame(
-        [pd.Series([text1, text2, text3, text4, text5])])
+        [pd.Series([text1, text2, text3, text4, text5,text6])])
 
     prediction = model.predict_proba(row_df)
 
