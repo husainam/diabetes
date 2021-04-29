@@ -1,4 +1,4 @@
-CARDIAB Cardiovascular Disease and Diabetes Prediction Using ML
+CARDIAB : Cardiovascular Disease and Diabetes Prediction Using ML
 
 Our Application Link :
 https://cvd-dia-predict.herokuapp.com/
